@@ -26,9 +26,9 @@ export const projects: Project[] = [
   {
     title: "E-Commerce Growth Analytics Platform",
     description:
-      "A comprehensive analytics platform built on Microsoft Fabric, showcasing the full Analytics Engineering workflow from raw data to business insights. Features Bronze/Silver/Gold medallion data modeling, 8 core KPIs, 3-page Power BI reports, and an AI-powered weekly report generator.",
-    techStack: ["Microsoft Fabric", "Power BI", "Python", "SQL", "DAX"],
-    githubUrl: "#",
+      "End-to-end analytics pipeline on Microsoft Fabric for a multi-channel DTC brand (Shopify, Amazon, TikTok Shop — 10K+ orders). Features Medallion architecture (Bronze → Silver → Gold) with PySpark ETL, star schema data modeling, automated pipeline orchestration, and a 3-page Power BI executive dashboard.",
+    techStack: ["Microsoft Fabric", "PySpark", "Power BI", "Delta Lake", "Python"],
+    githubUrl: "https://github.com/Leo309/ecommerce-analytics",
   },
   {
     title: "CollabZen — Partner Management SaaS",
