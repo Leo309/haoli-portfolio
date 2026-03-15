@@ -63,8 +63,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             ))}
           </ul>
 
-          {/* Secondary links */}
-          {project.liveUrl && project.githubUrl && (
+          {/* GitHub link */}
+          {project.githubUrl && project.githubUrl !== "#" && (
             <div className="mt-3 flex gap-4 text-xs text-slate-500">
               <a
                 href={project.githubUrl}
