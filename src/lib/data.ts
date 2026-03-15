@@ -31,6 +31,13 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Leo309/ecommerce-analytics",
   },
   {
+    title: "SaaS Feature Adoption Analytics",
+    description:
+      "Product analytics pipeline analyzing an AI feature launch for a B2B SaaS platform (~2,000 users, ~200K events). Built adoption funnel, cohort retention (30/60/90d), and DAU/MAU engagement analysis using dbt on BigQuery, orchestrated with Airflow in Docker, and visualized in Looker Studio.",
+    techStack: ["BigQuery", "dbt", "Apache Airflow", "Docker", "Looker Studio", "Python"],
+    githubUrl: "https://github.com/Leo309/saas-product-analytics",
+  },
+  {
     title: "CollabZen — Partner Management SaaS",
     description:
       "A partner management SaaS tool designed for SMBs, supporting influencer and affiliate partner tracking, project management, deliverable performance monitoring, and automated email reminders. Deployed and running in production.",
