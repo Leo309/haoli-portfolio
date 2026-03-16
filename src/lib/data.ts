@@ -27,14 +27,14 @@ export const projects: Project[] = [
     title: "E-Commerce Growth Analytics Platform",
     description:
       "End-to-end analytics pipeline on Microsoft Fabric for a multi-channel DTC brand (Shopify, Amazon, TikTok Shop — 10K+ orders). Features Medallion architecture (Bronze → Silver → Gold) with PySpark ETL, star schema data modeling, automated pipeline orchestration, and a 3-page Power BI executive dashboard.",
-    techStack: ["Microsoft Fabric", "PySpark", "Power BI", "Delta Lake", "Python"],
+    techStack: ["Microsoft Fabric", "PySpark", "SQL", "Power BI", "Delta Lake", "Python"],
     githubUrl: "https://github.com/Leo309/ecommerce-analytics",
   },
   {
     title: "SaaS Feature Adoption Analytics",
     description:
       "Product analytics pipeline analyzing an AI feature launch for a B2B SaaS platform (~2,000 users, ~200K events). Built adoption funnel, cohort retention (30/60/90d), and DAU/MAU engagement analysis using dbt on BigQuery, orchestrated with Airflow in Docker, and visualized in Looker Studio.",
-    techStack: ["BigQuery", "dbt", "Apache Airflow", "Docker", "Looker Studio", "Python"],
+    techStack: ["BigQuery", "dbt", "SQL", "Apache Airflow", "Docker", "Looker Studio", "Python"],
     githubUrl: "https://github.com/Leo309/saas-product-analytics",
   },
   {
