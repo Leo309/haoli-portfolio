@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
+import ReactMarkdown from "react-markdown";
 
 type Message = { role: "user" | "assistant"; content: string };
 
@@ -112,15 +113,19 @@ export default function AskAgent() {
                 key={i}
                 className={`text-sm ${m.role === "user" ? "text-right" : "text-left"}`}
               >
-                <span
-                  className={`inline-block max-w-[85%] whitespace-pre-wrap rounded-lg px-3 py-2 ${
+                <div
+                  className={`inline-block max-w-[85%] rounded-lg px-3 py-2 ${
                     m.role === "user"
-                      ? "bg-teal-400/15 text-teal-100"
-                      : "bg-slate-800/80 text-slate-300"
+                      ? "bg-teal-400/15 text-teal-100 whitespace-pre-wrap"
+                      : "bg-slate-800/80 text-slate-300 prose prose-sm prose-invert prose-p:my-1 prose-ul:my-1 prose-li:my-0 prose-headings:my-1 prose-headings:text-slate-200 prose-strong:text-teal-200 prose-a:text-teal-300 max-w-none"
                   }`}
                 >
-                  {m.content}
-                </span>
+                  {m.role === "user" ? (
+                    m.content
+                  ) : (
+                    <ReactMarkdown>{m.content}</ReactMarkdown>
+                  )}
+                </div>
               </div>
             ))}
 
