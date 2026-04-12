@@ -50,7 +50,6 @@ export const projects: Project[] = [
     description:
       "A RAG-powered AI agent embedded in this portfolio that lets recruiters query my professional background via natural language. Uses Claude's native tool use API for autonomous tool selection, OpenAI embeddings with Supabase pgvector for semantic search, and a custom agentic loop — no LangChain.",
     techStack: ["Next.js", "TypeScript", "Claude API", "OpenAI Embeddings", "Supabase pgvector", "Vercel"],
-    liveUrl: "https://haoli.ai/#ask",
     githubUrl: "https://github.com/Leo309/haoli-portfolio",
   },
   {
