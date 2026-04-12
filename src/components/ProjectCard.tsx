@@ -63,18 +63,26 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             ))}
           </ul>
 
-          {/* GitHub link */}
+          {/* GitHub link — uses span+click when inside an <a> to avoid nested <a> */}
           {project.githubUrl && project.githubUrl !== "#" && (
             <div className="mt-3 flex gap-4 text-xs text-slate-500">
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-teal-300 transition-colors"
-                onClick={(e) => e.stopPropagation()}
+              <span
+                role="link"
+                tabIndex={0}
+                className="cursor-pointer hover:text-teal-300 transition-colors"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  window.open(project.githubUrl, "_blank", "noopener,noreferrer");
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    window.open(project.githubUrl, "_blank", "noopener,noreferrer");
+                  }
+                }}
               >
                 GitHub
-              </a>
+              </span>
             </div>
           )}
         </div>
