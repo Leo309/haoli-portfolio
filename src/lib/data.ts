@@ -4,8 +4,13 @@ export const personalInfo = {
   tagline:
     "I build data-driven solutions that turn raw data into actionable business insights and delightful digital experiences.",
   email: "haoli.van@outlook.com",
+  phone: "778-922-8089",
   github: "https://github.com/Leo309",
   linkedin: "https://www.linkedin.com/in/haoli-van/",
+  portfolio: "https://haoli.ai",
+  location: "Coquitlam, BC, Canada",
+  status:
+    "Open to full-time opportunities in Data Analytics, BI Development, Analytics Engineering, and AI Engineering",
 };
 
 export const aboutParagraphs = [

@@ -40,10 +40,12 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           {/* Title with arrow */}
           <h3 className="flex items-center gap-1 text-lg font-medium leading-snug text-slate-200 group-hover:text-teal-300 transition-colors">
             {project.title}
-            <ArrowUpRight
-              size={16}
-              className="inline-block transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-            />
+            {primaryLink && (
+              <ArrowUpRight
+                size={16}
+                className="inline-block transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              />
+            )}
           </h3>
 
           {/* Description */}
