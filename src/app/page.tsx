@@ -2,6 +2,7 @@ import Spotlight from "@/components/Spotlight";
 import LeftSidebar from "@/components/LeftSidebar";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
+import AskAgent from "@/components/AskAgent";
 import Contact from "@/components/Contact";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         <main className="flex flex-col gap-24 pt-6 lg:w-[52%] lg:py-24">
           <About />
           <Projects />
+          <AskAgent />
           <Contact />
 
           {/* Footer */}

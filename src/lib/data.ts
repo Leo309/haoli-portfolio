@@ -55,5 +55,5 @@ export const projects: Project[] = [
   },
 ];
 
-export const sections = ["about", "projects", "contact"] as const;
+export const sections = ["about", "projects", "ask", "contact"] as const;
 export type SectionId = (typeof sections)[number];

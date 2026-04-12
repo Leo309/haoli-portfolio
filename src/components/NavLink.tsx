@@ -8,7 +8,10 @@ interface NavLinkProps {
 }
 
 export default function NavLink({ sectionId, isActive }: NavLinkProps) {
-  const label = sectionId.charAt(0).toUpperCase() + sectionId.slice(1);
+  const labelMap: Record<string, string> = { ask: "Ask My AI" };
+  const label =
+    labelMap[sectionId] ??
+    sectionId.charAt(0).toUpperCase() + sectionId.slice(1);
 
   return (
     <a
