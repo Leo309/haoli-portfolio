@@ -3,11 +3,12 @@ import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import OpenAI from "openai";
 import { personalInfo } from "@/lib/data";
 
-// claude-sonnet-4-20250514 was retired, which broke this route with a 404 from the API
-const CLAUDE_MODEL = "claude-opus-5-5";
+// claude-sonnet-4-20250514 was retired, which broke this route with a 404 from the API.
+// Haiku is the cheapest current model and is plenty for short Q&A over a small profile.
+const CLAUDE_MODEL = "claude-haiku-5-5";
 // Short factual Q&A doesn't need deep reasoning; "low" keeps answers fast and cheap
 const CLAUDE_EFFORT = "low";
-// Thinking is always on for this model and counts toward max_tokens, so leave headroom
+// Thinking is on by default for this model and counts toward max_tokens, so leave headroom
 const MAX_OUTPUT_TOKENS = 4096;
 const EMBEDDING_MODEL = "text-embedding-3-small";
 const MAX_QUESTION_LENGTH = 500;
