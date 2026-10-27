@@ -16,7 +16,9 @@ from openai import OpenAI
 from supabase import create_client
 
 openai_client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
-supabase = create_client(os.environ["SUPABASE_URL"], os.environ["SUPABASE_SERVICE_ROLE_KEY"])
+# Fall back to the Next.js variable name so the script runs straight off .env.local
+supabase_url = os.environ.get("SUPABASE_URL") or os.environ["NEXT_PUBLIC_SUPABASE_URL"]
+supabase = create_client(supabase_url, os.environ["SUPABASE_SERVICE_ROLE_KEY"])
 
 
 def chunk_text(text: str, chunk_size: int = 400, overlap: int = 50) -> list[str]:
@@ -47,7 +49,7 @@ def ingest_file(filepath: str, source_name: str):
     # Split by ## headers to preserve section boundaries
     sections = content.split("\n## ")
 
-    for section in sections:
+    for section_index, section in enumerate(sections):
         lines = section.strip().split("\n")
         section_title = lines[0].replace("# ", "").strip() if lines else source_name
         section_content = "\n".join(lines[1:]).strip() if len(lines) > 1 else section.strip()
@@ -58,7 +60,10 @@ def ingest_file(filepath: str, source_name: str):
         chunks = chunk_text(section_content)
 
         for i, chunk in enumerate(chunks):
-            doc_id = f"{source_name}_{section_title[:20].lower().replace(' ', '_')}_{i:03d}"
+            # Section index keeps IDs unique when two titles share their first 20 chars
+            # (e.g. two "University of Victoria — ..." roles), which used to overwrite each other
+            slug = section_title[:20].lower().replace(" ", "_")
+            doc_id = f"{source_name}_{section_index:02d}_{slug}_{i:03d}"
             embedding = embed(chunk)
 
             supabase.table("documents").upsert(
