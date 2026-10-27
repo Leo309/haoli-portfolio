@@ -3,7 +3,12 @@ import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import OpenAI from "openai";
 import { personalInfo } from "@/lib/data";
 
-const CLAUDE_MODEL = "claude-sonnet-4-20250514";
+// claude-sonnet-4-20250514 was retired, which broke this route with a 404 from the API
+const CLAUDE_MODEL = "claude-opus-5-5";
+// Short factual Q&A doesn't need deep reasoning; "low" keeps answers fast and cheap
+const CLAUDE_EFFORT = "low";
+// Thinking is always on for this model and counts toward max_tokens, so leave headroom
+const MAX_OUTPUT_TOKENS = 4096;
 const EMBEDDING_MODEL = "text-embedding-3-small";
 const MAX_QUESTION_LENGTH = 500;
 const MAX_TOOL_ROUNDS = 5;
@@ -90,17 +95,28 @@ function getContactInfo(): string {
 }
 
 // --- System Prompt ---
-const SYSTEM_PROMPT = `You are an AI assistant on haoli.ai, representing Hao Li — a data professional based in Vancouver, BC.
+const SYSTEM_PROMPT = `You are an AI assistant on haoli.ai, representing Hao Li — a data and AI automation professional based in Vancouver, BC.
 
-Your job is to answer recruiter and hiring manager questions about Hao's background accurately and professionally.
+Your job is to answer questions from recruiters, hiring managers, and potential clients or collaborators about Hao's background, work, and projects accurately and professionally.
 
 Rules:
-1. ALWAYS use the search_background tool before answering questions about Hao's skills, experience, or projects. Do not guess or fabricate information.
+1. Use the search_background tool before answering questions about Hao's skills, experience, projects, or current work. Do not guess or fabricate information.
 2. Be concise and factual. Use specific numbers (years of experience, project metrics) when available.
 3. If the retrieved context doesn't contain the answer, say "I don't have specific information about that in Hao's profile" rather than making something up.
-4. Keep a professional but friendly tone — you're representing Hao to potential employers.
+4. Keep a professional but friendly tone — you're representing Hao to potential employers and collaborators.
 5. If asked something unrelated to Hao's professional background, politely redirect: "I'm here to help with questions about Hao's professional background. What would you like to know?"
-6. When appropriate, suggest the recruiter reach out directly using get_contact_info.`;
+6. When appropriate, suggest reaching out to Hao directly using get_contact_info.`;
+
+function callClaude(messages: Anthropic.MessageParam[]) {
+  return getAnthropicClient().messages.create({
+    model: CLAUDE_MODEL,
+    max_tokens: MAX_OUTPUT_TOKENS,
+    output_config: { effort: CLAUDE_EFFORT },
+    system: SYSTEM_PROMPT,
+    tools,
+    messages,
+  });
+}
 
 // --- Main API Handler ---
 export async function POST(req: Request) {
@@ -120,13 +136,7 @@ export async function POST(req: Request) {
       { role: "user", content: question },
     ];
 
-    let response = await getAnthropicClient().messages.create({
-      model: CLAUDE_MODEL,
-      max_tokens: 1024,
-      system: SYSTEM_PROMPT,
-      tools,
-      messages,
-    });
+    let response = await callClaude(messages);
 
     // Agentic loop — Claude may call tools multiple times before producing a final answer
     let rounds = 0;
@@ -155,19 +165,16 @@ export async function POST(req: Request) {
       messages.push({ role: "assistant", content: response.content });
       messages.push({ role: "user", content: toolResults });
 
-      response = await getAnthropicClient().messages.create({
-        model: CLAUDE_MODEL,
-        max_tokens: 1024,
-        system: SYSTEM_PROMPT,
-        tools,
-        messages,
-      });
+      response = await callClaude(messages);
     }
 
-    const answer = response.content
-      .filter((b): b is Anthropic.TextBlock => b.type === "text")
-      .map((b) => b.text)
-      .join("");
+    // A refusal or an exhausted tool loop can leave no text; never show the visitor a blank reply
+    const answer =
+      response.content
+        .filter((b): b is Anthropic.TextBlock => b.type === "text")
+        .map((b) => b.text)
+        .join("") ||
+      "Sorry, I couldn't answer that one. Try asking about Hao's experience, projects, or how to reach him.";
 
     // Clean history: text only, no tool exchanges, capped at 10 messages
     const cleanHistory: Anthropic.MessageParam[] = [
