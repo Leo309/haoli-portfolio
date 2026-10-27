@@ -1,8 +1,12 @@
 # Work Experience
 
-## Skynex Digital — Data Consultant (February 2025 – Present)
+## Vancity Community Foundation — Data Analysis and Research Officer, Reaching Home (June 2026 – Present)
 
-Hao works remotely from Coquitlam, BC as a Data Consultant at Skynex Digital, a company focused on data consulting, growth marketing, and product development.
+Hao works full-time as Data Analysis and Research Officer for the Reaching Home program at Vancity Community Foundation in Vancouver, BC. Reaching Home is Canada's community-based homelessness strategy, a federal program that funds communities to prevent and reduce homelessness. Hao provides data analysis and research for the program.
+
+## Skynex Digital — Founder (February 2025 – Present)
+
+Hao founded and runs Skynex Digital (skynexdigital.com), his one-person company focused on AI products, data consulting, and growth marketing. He runs it alongside his full-time role. Live products include GeoGrade (geograde.ai), CollabZen (collabzen.ai), and Real Return Analyzer (realreturns.skynexdigital.com).
 
 ### Consulting & Manufacturing Analytics
 

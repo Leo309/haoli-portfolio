@@ -9,8 +9,8 @@ type Message = { role: "user" | "assistant"; content: string };
 const SUGGESTED_QUESTIONS = [
   "Does Hao have Power BI experience?",
   "What projects has he built?",
-  "What's his SQL experience level?",
-  "Is he available for full-time roles?",
+  "What AI products has he shipped?",
+  "Is he open to new roles or projects?",
 ];
 
 export default function AskAgent() {

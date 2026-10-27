@@ -1,6 +1,6 @@
 # haoli.ai — Personal Portfolio
 
-Personal portfolio website for Hao Li, showcasing projects in analytics engineering, data analysis, and full-stack development.
+Personal site of Hao Li (AI automation & data), with AskHao: a RAG agent built on Claude tool use and Supabase pgvector that answers questions about his background.
 
 ## Tech Stack
 

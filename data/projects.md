@@ -1,5 +1,31 @@
 # Independent Projects
 
+## AskHao — AI Agent on haoli.ai
+
+GitHub: github.com/Leo309/haoli-portfolio
+
+AskHao is the AI agent embedded in Hao's personal site that answers questions about his background. Hao built it on Claude's native tool use with a hand-written agentic loop instead of a framework like LangChain. Questions are embedded with OpenAI text-embedding-3-small and matched against Hao's profile in Supabase pgvector. The agent decides on its own when to call its two tools: search_background (semantic search) and get_contact_info. Built with Next.js and TypeScript, deployed on Vercel.
+
+## GeoGrade (Skynex Digital product)
+
+Live at geograde.ai. GeoGrade checks whether ChatGPT recommends your business. Hao built and runs it through Skynex Digital.
+
+## CollabZen (Skynex Digital product)
+
+Live at collabzen.ai. CollabZen is a partner management SaaS for SMBs and DTC brands, covering influencer and affiliate partner tracking, project management, deliverable performance monitoring, and automated email reminders. Built with Next.js, TypeScript, Supabase, Stripe, and Tailwind CSS.
+
+## Real Return Analyzer (Skynex Digital product)
+
+Live at realreturns.skynexdigital.com. GitHub: github.com/Leo309/Real-Return-Analyzer
+
+A financial education web app that uses historical data from 7 major economies (1970–2024) to show how inflation erodes purchasing power and what different investments really returned. Supports English, Chinese, and French. Built with Next.js, React, TypeScript, Chart.js, and Zustand.
+
+## Claude Prompt Films
+
+GitHub: github.com/Leo309/claude-prompt-films
+
+An experiment in AI-generated media: one prompt becomes a finished short film, with every frame drawn in code. Built with Claude Code, HTML Canvas, and the Web Audio API.
+
 ## E-Commerce Growth Analytics Platform
 
 GitHub: github.com/Leo309/ecommerce-analytics

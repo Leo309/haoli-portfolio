@@ -1,8 +1,8 @@
 export const personalInfo = {
   name: "Hao Li",
-  title: "Analytics Engineer & Full Stack Developer",
+  title: "AI Automation & Data",
   tagline:
-    "I build data-driven solutions that turn raw data into actionable business insights and delightful digital experiences.",
+    "I build AI agents and automations that turn messy business data into results.",
   email: "haoli.van@outlook.com",
   phone: "778-922-8089",
   github: "https://github.com/Leo309",
@@ -10,13 +10,13 @@ export const personalInfo = {
   portfolio: "https://haoli.ai",
   location: "Coquitlam, BC, Canada",
   status:
-    "Open to full-time opportunities in Data Analytics, BI Development, Analytics Engineering, and AI Engineering",
+    "Data Analysis & Research Officer at Vancity Community Foundation (Reaching Home) · Founder of Skynex Digital · Open to AI automation and AI enablement roles, consulting projects, and collaborations",
 };
 
 export const aboutParagraphs = [
-  "I'm an analytics engineer and full-stack developer with a passion for transforming complex data into clear, actionable insights. My background spans e-commerce growth analytics, data platform architecture, and modern web development — allowing me to bridge the gap between data teams and business stakeholders.",
-  "In my recent work, I've built end-to-end analytics platforms using Microsoft Fabric, designed data models following medallion architecture patterns, and created interactive dashboards that drive real business decisions. I enjoy the full spectrum — from writing SQL transformations and building data pipelines to crafting polished user interfaces.",
-  "Beyond my core work, I'm deeply interested in AI agent orchestration — exploring how to coordinate AI agents to improve project quality and operational efficiency. I believe every technology investment ultimately comes down to two outcomes: driving more revenue or reducing costs. This lens shapes how I evaluate and adopt new tools, ensuring they deliver real business value rather than just technical novelty.",
+  "By day, I'm a Data Analysis & Research Officer at Vancity Community Foundation, working on Reaching Home — Canada's community-based homelessness strategy. On the side, I run Skynex Digital, my one-person company, where I build and ship AI products like GeoGrade and CollabZen.",
+  "My foundation is analytics engineering. I've rebuilt reporting platforms on Microsoft Fabric and Power BI used by around 200 staff, and built end-to-end pipelines with PySpark, dbt, and BigQuery. That background is what makes the AI work practical: an agent is only as useful as the data it can reach.",
+  "I care about AI that pays for itself. Every technology investment comes down to two outcomes, more revenue or lower costs, and that lens shapes what I build — from AskHao, the agent on this page, to automations for small businesses.",
 ];
 
 export interface Project {

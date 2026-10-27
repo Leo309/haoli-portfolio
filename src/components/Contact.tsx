@@ -21,10 +21,10 @@ export default function Contact() {
         className="max-w-lg"
       >
         <p className="leading-relaxed">
-          I'm currently open to new opportunities in analytics engineering,
-          data analysis, and full-stack development. Whether you have a
-          question, a potential role, or just want to say hi — my inbox is
-          always open.
+          I'm open to AI automation and AI enablement roles, as well as
+          consulting projects and collaborations through Skynex Digital.
+          Whether you have a role, a project, or just want to say hi — my
+          inbox is always open.
         </p>
 
         <a
