@@ -12,7 +12,7 @@ Live at geograde.ai. GeoGrade checks whether ChatGPT recommends your business. H
 
 ## CollabZen (Skynex Digital product)
 
-Live at collabzen.ai. CollabZen is a partner management SaaS for SMBs and DTC brands, covering influencer and affiliate partner tracking, project management, deliverable performance monitoring, and automated email reminders. Built with Next.js, TypeScript, Supabase, Stripe, and Tailwind CSS.
+collabzen.ai — built from 0 to 1 and launched in production; currently paused. CollabZen is a partner management SaaS for SMBs and DTC brands, covering influencer and affiliate partner tracking, project management, deliverable performance monitoring, and automated email reminders. Built with Next.js, TypeScript, Supabase, Stripe, and Tailwind CSS.
 
 ## Real Return Analyzer (Skynex Digital product)
 

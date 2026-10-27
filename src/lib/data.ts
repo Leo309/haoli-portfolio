@@ -14,9 +14,9 @@ export const personalInfo = {
 };
 
 export const aboutParagraphs = [
-  "By day, I'm a Data Analysis & Research Officer at Vancity Community Foundation, working on Reaching Home — Canada's community-based homelessness strategy. On the side, I run Skynex Digital, my one-person company, where I build and ship AI products like GeoGrade and CollabZen.",
+  "By day, I'm a Data Analysis & Research Officer at Vancity Community Foundation, working on Reaching Home — Canada's community-based homelessness strategy. On the side, I run Skynex Digital, my one-person company, where I build and ship products like GeoGrade, which checks whether ChatGPT recommends your business.",
   "My foundation is analytics engineering. I've rebuilt reporting platforms on Microsoft Fabric and Power BI used by around 200 staff, and built end-to-end pipelines with PySpark, dbt, and BigQuery. That background is what makes the AI work practical: an agent is only as useful as the data it can reach.",
-  "I care about AI that pays for itself. Every technology investment comes down to two outcomes, more revenue or lower costs, and that lens shapes what I build — from AskHao, the agent on this page, to automations for small businesses.",
+  "I care about AI that pays for itself. Every technology investment comes down to two outcomes, more revenue or lower costs, and that lens shapes what I build — from AI agents like AskHao to automations for small businesses.",
 ];
 
 export interface Project {
@@ -45,7 +45,7 @@ export const projects: Project[] = [
   {
     title: "CollabZen — Partner Management SaaS",
     description:
-      "A partner management SaaS tool designed for SMBs, supporting influencer and affiliate partner tracking, project management, deliverable performance monitoring, and automated email reminders. Deployed and running in production.",
+      "A partner management SaaS tool designed for SMBs, supporting influencer and affiliate partner tracking, project management, deliverable performance monitoring, and automated email reminders. Built from 0 to 1 and launched in production; currently paused.",
     techStack: ["Next.js", "TypeScript", "Supabase", "Stripe", "Tailwind CSS"],
     liveUrl: "https://collabzen.ai",
     githubUrl: "#",
@@ -53,7 +53,7 @@ export const projects: Project[] = [
   {
     title: "haoli.ai — AI Resume Agent",
     description:
-      "A RAG-powered AI agent embedded in this portfolio that lets recruiters query my professional background via natural language. Uses Claude's native tool use API for autonomous tool selection, OpenAI embeddings with Supabase pgvector for semantic search, and a custom agentic loop — no LangChain.",
+      "A RAG-powered AI agent built for this portfolio that lets recruiters query my professional background via natural language. Uses Claude's native tool use API for autonomous tool selection, OpenAI embeddings with Supabase pgvector for semantic search, and a custom agentic loop — no LangChain.",
     techStack: ["Next.js", "TypeScript", "Claude API", "OpenAI Embeddings", "Supabase pgvector", "Vercel"],
     githubUrl: "https://github.com/Leo309/haoli-portfolio",
   },
@@ -67,5 +67,6 @@ export const projects: Project[] = [
   },
 ];
 
-export const sections = ["about", "projects", "ask", "contact"] as const;
+// "ask" is left out while the AskAgent section is hidden (see page.tsx)
+export const sections = ["about", "projects", "contact"] as const;
 export type SectionId = (typeof sections)[number];

@@ -23,7 +23,7 @@ He is authorized to work in Canada and does not require sponsorship.
 - Reduced ad-hoc data requests by 80% through self-serve reporting and enablement
 - Tracking over $100M in donation volume through fundraising dashboards
 - Built a full-stack CRM product from 0 to 1, managing metadata for influencers with 10M+ total followers
-- Founder of Skynex Digital, shipping live AI products: GeoGrade (geograde.ai) and CollabZen (collabzen.ai)
+- Founder of Skynex Digital: runs GeoGrade (geograde.ai); built and launched CollabZen (collabzen.ai), currently paused
 - Built AskHao, the RAG agent on haoli.ai, on Claude's native tool use with a hand-written agentic loop (no LangChain)
 - Bilingual: Mandarin (Native) and English (Professional working proficiency)
 

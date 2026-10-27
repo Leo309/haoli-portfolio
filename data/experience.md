@@ -6,7 +6,7 @@ Hao works full-time as Data Analysis and Research Officer for the Reaching Home 
 
 ## Skynex Digital — Founder (February 2025 – Present)
 
-Hao founded and runs Skynex Digital (skynexdigital.com), his one-person company focused on AI products, data consulting, and growth marketing. He runs it alongside his full-time role. Live products include GeoGrade (geograde.ai), CollabZen (collabzen.ai), and Real Return Analyzer (realreturns.skynexdigital.com).
+Hao founded and runs Skynex Digital (skynexdigital.com), his one-person company focused on AI products, data consulting, and growth marketing. He runs it alongside his full-time role. Products include GeoGrade (geograde.ai) and Real Return Analyzer (realreturns.skynexdigital.com), plus CollabZen (collabzen.ai), a partner CRM that is currently paused.
 
 ### Consulting & Manufacturing Analytics
 

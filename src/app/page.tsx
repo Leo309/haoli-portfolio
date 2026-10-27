@@ -2,7 +2,6 @@ import Spotlight from "@/components/Spotlight";
 import LeftSidebar from "@/components/LeftSidebar";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
-import AskAgent from "@/components/AskAgent";
 import Contact from "@/components/Contact";
 
 export default function Home() {
@@ -17,7 +16,8 @@ export default function Home() {
         <main className="flex flex-col gap-24 pt-6 lg:w-[52%] lg:py-24">
           <About />
           <Projects />
-          <AskAgent />
+          {/* AskAgent is hidden until the redesign: its Supabase project is paused,
+              so the agent can't search Hao's profile. It returns with the new site. */}
           <Contact />
 
           {/* Footer */}

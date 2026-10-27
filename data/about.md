@@ -21,7 +21,7 @@ He is authorized to work in Canada and does not require visa sponsorship.
 
 2. **Real production impact**: His work at UVic directly served approximately 200 staff and tracked over $100M in donations. These are not toy projects.
 
-3. **Product building mindset**: Beyond analytics, Hao has built production software from scratch — a full-stack CRM managing 10M+ follower influencer data, saving clients 10+ hours/month. Through Skynex Digital he ships live AI products such as GeoGrade and CollabZen.
+3. **Product building mindset**: Beyond analytics, Hao has built production software from scratch — a full-stack CRM managing 10M+ follower influencer data, saving clients 10+ hours/month. Through Skynex Digital he runs GeoGrade, which checks whether ChatGPT recommends a business, and built CollabZen, a partner CRM that is currently paused.
 
 4. **Modern tech stack**: Hao works with current tools including Microsoft Fabric, dbt, Airflow, Next.js, and Claude AI — not just legacy BI tools.
 
