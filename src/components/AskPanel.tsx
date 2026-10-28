@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import ReactMarkdown from "react-markdown";
 import type { ChatTurn } from "@/lib/ask-history";
 import { trackEvent } from "@/lib/analytics";
+import Markdown from "./Markdown";
 import { usePanel } from "./PanelProvider";
 
 type Message = { role: "user" | "assistant"; content: string; sources?: string[] };
@@ -96,7 +96,7 @@ export default function AskPanel() {
           ) : (
             <div key={i} className="rounded-[12px] border border-line bg-card px-3 py-2.5">
               <div className="prose prose-sm max-w-none prose-p:my-1.5 prose-p:text-ink-2 prose-li:text-ink-2 prose-strong:text-ink prose-a:text-accent">
-                <ReactMarkdown>{m.content}</ReactMarkdown>
+                <Markdown>{m.content}</Markdown>
               </div>
               {m.sources && m.sources.length > 0 && (
                 <ul aria-label="Sources" className="mt-2 flex flex-wrap gap-1.5">

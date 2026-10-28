@@ -1,4 +1,4 @@
-import ReactMarkdown from "react-markdown";
+import Markdown from "./Markdown";
 
 // Tailwind Typography restyled to the site tokens, shared by case and lab pages
 const PROSE = [
@@ -13,7 +13,7 @@ const PROSE = [
 export default function ArticleBody({ markdown }: { markdown: string }) {
   return (
     <div className={PROSE}>
-      <ReactMarkdown>{markdown}</ReactMarkdown>
+      <Markdown>{markdown}</Markdown>
     </div>
   );
 }
