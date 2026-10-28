@@ -55,15 +55,14 @@ export default function Sidebar() {
         </a>
       </div>
 
-      <button
-        type="button"
-        data-panel="ask"
+      <OpenPanelButton
+        panel="ask"
         className="mt-[18px] flex min-h-11 w-full items-center gap-2.5 rounded-xl border border-line-2 bg-card px-3 text-left text-[13px] text-muted transition hover:border-accent hover:shadow-[0_0_0_4px_var(--color-accent-soft)]"
       >
         <span aria-hidden className="text-accent">✦</span>
         Ask my AI anything about me
         <span aria-hidden className="ml-auto rounded-[5px] border border-line px-1.5 font-mono text-[11px]">↵</span>
-      </button>
+      </OpenPanelButton>
 
       <ul className="mt-5 flex gap-1.5">
         {SOCIALS.map(({ label, href, Icon, external }) => (

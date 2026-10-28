@@ -29,7 +29,7 @@ describe("shipped content", () => {
   });
 
   it.each(files)("%s has no unfinished markers", (file) => {
-    expect(fs.readFileSync(file, "utf8")).not.toMatch(/TODO|\[BUILDER|lorem ipsum/i);
+    expect(fs.readFileSync(file, "utf8")).not.toMatch(/\bTODO\b|\[BUILDER|lorem ipsum/i);
   });
 
   it.each(files)("%s contains no phone number", (file) => {

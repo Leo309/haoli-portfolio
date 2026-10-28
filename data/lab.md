@@ -13,7 +13,8 @@ AskHao is the agent on haoli.ai.
 
 **v2 (long context)**:
 
-- The whole profile is about 4,000 tokens, small enough to give the model in full. Hao removed the retrieval layer.
+- The whole knowledge base is about 3,300 words (roughly 13,000 tokens with instructions), small enough to give the model in full. Hao removed the retrieval layer.
+- Measured cost: about $0.0002–0.0005 per question when the knowledge base is cached, and about $0.002 for the first question after the cache expires.
 - AskHao now runs on Claude Haiku 5.5 with the full profile as documents, prompt caching and citations.
 - Every answer shows its sources.
 - The change removed two services (OpenAI embeddings and the vector database) and ended the retrieval misses.

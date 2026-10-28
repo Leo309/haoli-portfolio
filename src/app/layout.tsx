@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import AskPanel from "@/components/AskPanel";
 import InquiryForm from "@/components/InquiryForm";
 import Panel from "@/components/Panel";
 import { PanelProvider } from "@/components/PanelProvider";
@@ -30,6 +31,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <PanelProvider>
           {children}
           {/* Available on every page: each "Work with me" button opens it */}
+          <Panel id="ask" title="Ask my AI">
+            <AskPanel />
+          </Panel>
           <Panel id="inquiry" title="Work with me">
             <InquiryForm />
           </Panel>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { lab, type LabEntry } from "@/lib/site";
+import { OpenPanelButton } from "@/components/PanelProvider";
 import StatusLabel from "@/components/StatusLabel";
 import SectionHeader from "./SectionHeader";
 
@@ -28,9 +29,9 @@ export default function Lab() {
         {lab.map((entry) => {
           if (entry.opensAsk) {
             return (
-              <button key={entry.title} type="button" data-panel="ask" className={`${ROW} ${INTERACTIVE}`}>
+              <OpenPanelButton key={entry.title} panel="ask" className={`${ROW} ${INTERACTIVE}`}>
                 <RowContent entry={entry} />
-              </button>
+              </OpenPanelButton>
             );
           }
           if (entry.href?.startsWith("/")) {

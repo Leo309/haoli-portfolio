@@ -23,12 +23,20 @@ It worked, and it was a good exercise. It was also more machinery than the probl
 
 ## Why long context won
 
-My whole profile is about 4,000 tokens. That is tiny next to what a current model can read. So v2 gives Claude Haiku 5.5 all of it on every question:
+My whole profile, case studies included, is about 3,300 words. With the instructions and citation markup, the model reads roughly 13,000 tokens per question. That is tiny next to the million tokens Claude Haiku 5.5 can read, so v2 gives it everything on every question:
 
 - **Nothing to miss.** The model sees every fact, not the five chunks a similarity score picked.
 - **Prompt caching** keeps it cheap. The profile is the same on every request, so it's cached and re-read at a fraction of the normal input price.
 - **Citations** show the source behind every answer, so you can see what each claim rests on.
 - **Two services fewer.** No embeddings API, no vector database, no ingest step. Editing a Markdown file updates the agent.
+
+## What it costs
+
+I measured it:
+
+- **First question in a while: about $0.002.** The ~13,000-token prefix gets written to the cache.
+- **Every question after that: about $0.0002–0.0005.** The prefix is read from the cache at a tenth of the normal input price, so most of the cost is the answer itself.
+- **A thousand questions** cost well under a dollar, with no database or embeddings bill on top.
 
 ## When RAG comes back
 
