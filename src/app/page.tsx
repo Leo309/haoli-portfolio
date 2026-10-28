@@ -1,60 +1,37 @@
-import Spotlight from "@/components/Spotlight";
-import LeftSidebar from "@/components/LeftSidebar";
-import About from "@/components/About";
-import Projects from "@/components/Projects";
-import Contact from "@/components/Contact";
+import Sidebar from "@/components/Sidebar";
+import Reveal from "@/components/Reveal";
+import ClientResults from "@/components/sections/ClientResults";
+import Products from "@/components/sections/Products";
+import Lab from "@/components/sections/Lab";
+import WhyIBuild from "@/components/sections/WhyIBuild";
+import Experience from "@/components/sections/Experience";
+import { getCases } from "@/lib/content";
 
 export default function Home() {
+  // Read at build time: the home page is statically generated
+  const cases = getCases();
+
   return (
-    <>
-      <Spotlight />
-      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:flex lg:gap-12 lg:px-24 lg:py-0">
-        {/* Left sidebar */}
-        <LeftSidebar />
-
-        {/* Right content */}
-        <main className="flex flex-col gap-24 pt-6 lg:w-[52%] lg:py-24">
-          <About />
-          <Projects />
-          {/* AskAgent is hidden until the redesign: its Supabase project is paused,
-              so the agent can't search Hao's profile. It returns with the new site. */}
-          <Contact />
-
-          {/* Footer */}
-          <footer className="pb-16 text-sm text-slate-500 lg:pb-24">
-            <p>
-              Built with{" "}
-              <a
-                href="https://nextjs.org"
-                className="font-medium text-slate-400 hover:text-teal-300 transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Next.js
-              </a>{" "}
-              and{" "}
-              <a
-                href="https://tailwindcss.com"
-                className="font-medium text-slate-400 hover:text-teal-300 transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Tailwind CSS
-              </a>
-              . Deployed on{" "}
-              <a
-                href="https://vercel.com"
-                className="font-medium text-slate-400 hover:text-teal-300 transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Vercel
-              </a>
-              .
-            </p>
-          </footer>
-        </main>
-      </div>
-    </>
+    <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:flex lg:gap-12 lg:px-12">
+      <Sidebar />
+      <main className="flex min-w-0 flex-1 flex-col gap-10 pt-12 pb-10 lg:py-20">
+        <Reveal>
+          <ClientResults cases={cases} />
+        </Reveal>
+        <Reveal>
+          <Products />
+        </Reveal>
+        <Reveal>
+          <Lab />
+        </Reveal>
+        <Reveal>
+          <WhyIBuild />
+        </Reveal>
+        <Reveal>
+          <Experience />
+        </Reveal>
+        <footer className="pt-6 text-[12.5px] text-muted">© Hao Li</footer>
+      </main>
+    </div>
   );
 }

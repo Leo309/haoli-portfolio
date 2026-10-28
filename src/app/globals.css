@@ -1,9 +1,29 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* Warm neutrals + one accent (forest green). Never pure black, never dark backgrounds. */
 @theme {
-  --color-slate-850: #172033;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-canvas: #f7f6f3;
+  --color-card: #ffffff;
+  --color-ink: #26251f;
+  --color-ink-2: #55524b;
+  /* #8f8b82 from the mockup fails WCAG AA at small sizes; this one passes (~4.9:1) */
+  --color-muted: #6f6b63;
+  --color-line: #e9e6df;
+  --color-line-2: #dcd8cf;
+  --color-accent: #2f7d5b;
+  --color-accent-ink: #25664a;
+  --color-accent-soft: #e7f2ec;
+  --color-accent-avatar: #9fd2b5;
+  --color-live: #34a865;
+  --color-paused: #bdb8ae;
+  --color-experiment: #8fb3d9;
+}
+
+/* "inline" so the utilities resolve the next/font variables set on <html> */
+@theme inline {
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
 html {
@@ -11,25 +31,36 @@ html {
 }
 
 body {
-  background-color: var(--color-slate-950);
-  color: var(--color-slate-400);
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
 }
 
 ::selection {
-  background-color: var(--color-teal-600);
-  color: var(--color-slate-100);
+  background-color: var(--color-accent-soft);
+  color: var(--color-ink);
 }
 
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 6px;
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
-::-webkit-scrollbar-track {
-  background: transparent;
+/* Availability dot: a slow "breathing" ring that says "you can reach me now" */
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgb(52 168 101 / 0.45); }
+  70% { box-shadow: 0 0 0 7px rgb(52 168 101 / 0); }
+  100% { box-shadow: 0 0 0 0 rgb(52 168 101 / 0); }
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--color-slate-700);
-  border-radius: 3px;
+.pulse-dot {
+  animation: pulse-ring 2s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .pulse-dot {
+    animation: none;
+  }
 }

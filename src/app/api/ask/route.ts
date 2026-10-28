@@ -1,7 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import OpenAI from "openai";
-import { personalInfo } from "@/lib/data";
+import { links } from "@/lib/site";
 
 // claude-sonnet-4-20250514 was retired, which broke this route with a 404 from the API.
 // Haiku is the cheapest current model and is plenty for short Q&A over a small profile.
@@ -92,7 +92,8 @@ async function vectorSearch(query: string): Promise<string> {
 }
 
 function getContactInfo(): string {
-  return JSON.stringify(personalInfo);
+  // Temporary until the v2 rewrite: public links only, never a phone number
+  return JSON.stringify({ email: links.email, linkedin: links.linkedin, github: links.github, website: "https://haoli.ai" });
 }
 
 // --- System Prompt ---
