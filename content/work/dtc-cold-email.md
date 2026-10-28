@@ -9,11 +9,11 @@ order: 2
 
 ## The problem
 
-DTC brand clients needed a steady flow of high-intent leads, and follow-ups were easy to drop when done by hand.
+DTC brand clients needed more high-intent leads in their pipeline.
 
 ## What I did
 
-I designed targeted cold-email sequences and automated the follow-up workflow, so every prospect got the next touch on time without anyone tracking it.
+I designed targeted cold-email sequences and automated the follow-up workflow.
 
 ## The result
 

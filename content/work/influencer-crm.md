@@ -15,7 +15,7 @@ DTC brand owners were tracking their influencer partnerships in Excel. Statuses,
 
 I built a CRM made for that job, from 0 to 1:
 
-- Excel import and export, plus bulk operations, so teams could move over in an afternoon
+- Excel import and export, plus bulk operations, so onboarding was fast
 - Status updates, grouping and structured records instead of free-form cells
 
 It later became CollabZen, a partner management product, which is now paused.

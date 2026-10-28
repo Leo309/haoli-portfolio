@@ -19,7 +19,7 @@ It worked, and it was a good exercise. It was also more machinery than the probl
 
 - **The database fell asleep.** Supabase pauses free projects after a week without traffic. A personal site doesn't get daily traffic, so the agent kept losing its memory. It could only tell visitors that search was failing.
 - **Retrieval missed.** Short questions didn't land close enough to the right chunk, so I lowered the match threshold to 0.3 to get any hits at all. A looser threshold means noisier context.
-- **The pipeline had its own bugs.** Two sections with the same heading produced the same chunk ID, and one quietly overwrote the other. Every fix meant re-running the ingest script.
+- **The pipeline had its own bugs.** Chunk IDs used only the first 20 characters of a section heading, so two roles at the same employer collided and one quietly overwrote the other. Every fix meant re-running the ingest script.
 
 ## Why long context won
 
@@ -36,7 +36,7 @@ I measured it:
 
 - **First question in a while: about $0.002.** The ~13,000-token prefix gets written to the cache.
 - **Every question after that: about $0.0002–0.0005.** The prefix is read from the cache at a tenth of the normal input price, so most of the cost is the answer itself.
-- **A thousand questions** cost well under a dollar, with no database or embeddings bill on top.
+- **A thousand questions** cost roughly $0.30 to $2, depending on how many arrive while the cache is still warm, with no database or embeddings bill on top.
 
 ## When RAG comes back
 
