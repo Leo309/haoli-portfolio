@@ -89,4 +89,9 @@ html:has(dialog[open]) {
   .panel[open] {
     animation: none;
   }
+  /* Beat the inline opacity:0 the server renders for the entrance animation */
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

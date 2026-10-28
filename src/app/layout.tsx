@@ -28,6 +28,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${geist.variable} ${geistMono.variable}`}>
+      <head>
+        {/* Without JS the entrance animation never runs, so show the content as-is */}
+        <noscript dangerouslySetInnerHTML={{ __html: "<style>[data-reveal]{opacity:1!important;transform:none!important}</style>" }} />
+      </head>
       <body className="font-sans antialiased">
         <PanelProvider>
           {children}
