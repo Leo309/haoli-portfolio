@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { OpenPanelButton } from "./PanelProvider";
 import Link from "next/link";
 import { profile } from "@/lib/site";
 
@@ -10,13 +11,12 @@ export default function TopBar() {
         <Image src="/avatar.png" alt="" width={32} height={32} className="size-8 rounded-full bg-accent-avatar object-cover" />
         <span className="text-[15px] font-bold">{profile.name}</span>
       </Link>
-      <button
-        type="button"
-        data-panel="inquiry"
+      <OpenPanelButton
+        panel="inquiry"
         className="inline-flex min-h-10 items-center gap-1.5 rounded-[10px] bg-accent px-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-accent-ink"
       >
         Work with me <span aria-hidden>→</span>
-      </button>
+      </OpenPanelButton>
     </header>
   );
 }

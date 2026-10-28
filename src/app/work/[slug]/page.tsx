@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ArticleBody from "@/components/ArticleBody";
+import { OpenPanelButton } from "@/components/PanelProvider";
 import TopBar from "@/components/TopBar";
 import { getCase, getCases, getNextCase } from "@/lib/content";
 
@@ -48,13 +49,12 @@ export default async function CaseStudyPage({ params }: Props) {
         </div>
 
         <div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-line pt-6">
-          <button
-            type="button"
-            data-panel="inquiry"
+          <OpenPanelButton
+            panel="inquiry"
             className="inline-flex min-h-10 items-center gap-1.5 rounded-[10px] bg-accent px-4 text-[13.5px] font-semibold text-white transition-colors hover:bg-accent-ink"
           >
             Work with me <span aria-hidden>→</span>
-          </button>
+          </OpenPanelButton>
           {next.slug !== study.slug && (
             <Link href={`/work/${next.slug}`} className="-my-2 py-2 text-[13.5px] font-medium text-ink-2 hover:text-accent">
               Next case → <span className="text-muted">{next.title}</span>

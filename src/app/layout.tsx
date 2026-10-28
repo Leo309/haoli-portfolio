@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import InquiryForm from "@/components/InquiryForm";
+import Panel from "@/components/Panel";
+import { PanelProvider } from "@/components/PanelProvider";
 import { profile } from "@/lib/site";
 import "./globals.css";
 
@@ -23,7 +26,15 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${geist.variable} ${geistMono.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        <PanelProvider>
+          {children}
+          {/* Available on every page: each "Work with me" button opens it */}
+          <Panel id="inquiry" title="Work with me">
+            <InquiryForm />
+          </Panel>
+        </PanelProvider>
+      </body>
     </html>
   );
 }

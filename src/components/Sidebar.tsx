@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { OpenPanelButton } from "./PanelProvider";
 import { links, profile } from "@/lib/site";
 import { GitHubIcon, LinkedInIcon, MailIcon } from "./Icons";
 
@@ -38,13 +39,12 @@ export default function Sidebar() {
       </p>
 
       <div className="mt-5 flex flex-wrap gap-2">
-        <button
-          type="button"
-          data-panel="inquiry"
+        <OpenPanelButton
+          panel="inquiry"
           className="group inline-flex min-h-10 items-center gap-1.5 rounded-[10px] bg-accent px-4 text-[13.5px] font-semibold text-white shadow-[0_4px_14px_rgb(47_125_91/0.28)] transition hover:-translate-y-px hover:bg-accent-ink motion-reduce:transition-none motion-reduce:hover:translate-y-0"
         >
           Work with me <span aria-hidden className="transition-transform group-hover:translate-x-[3px]">→</span>
-        </button>
+        </OpenPanelButton>
         <a
           href={links.resume}
           target="_blank"

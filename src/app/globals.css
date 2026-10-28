@@ -18,6 +18,8 @@
   --color-live: #34a865;
   --color-paused: #bdb8ae;
   --color-experiment: #8fb3d9;
+  /* Form errors: a warm red that still passes AA on the canvas */
+  --color-danger: #b4533b;
 }
 
 /* "inline" so the utilities resolve the next/font variables set on <html> */
@@ -56,11 +58,35 @@ body {
   animation: pulse-ring 2s infinite;
 }
 
+/* Panels slide in from the right on desktop, up from the bottom on phones */
+@keyframes panel-in-right {
+  from { transform: translateX(24px); opacity: 0; }
+}
+@keyframes panel-in-up {
+  from { transform: translateY(24px); opacity: 0; }
+}
+
+.panel[open] {
+  animation: panel-in-up 0.2s ease-out;
+}
+
+@media (min-width: 640px) {
+  .panel[open] {
+    animation-name: panel-in-right;
+  }
+}
+
+/* Lock the page behind an open panel */
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-  .pulse-dot {
+  .pulse-dot,
+  .panel[open] {
     animation: none;
   }
 }
