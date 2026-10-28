@@ -29,7 +29,7 @@ src/app/api/inquiry       "Work with me" form endpoint
 src/components/           UI, including the shared <dialog> panel for AskHao and the form
 ```
 
-Pages and AskHao read the same Markdown, so there is one source of truth. A content test fails the build if shipped content contains unfinished markers, client names, phone numbers or pure black.
+Pages and AskHao read the same Markdown, so there is one source of truth. `npm test` includes a content guard that fails if shipped content contains unfinished markers, phone numbers, pure black, or a client name. The client-name list lives in a gitignored local file, so the guard never publishes the names it protects.
 
 ## AskHao
 

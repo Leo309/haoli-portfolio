@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
+import { findForbiddenTerms, loadForbiddenTerms } from "./forbidden-terms";
 
 // Everything that ships to visitors or to AskHao. The repo is public and the
 // site is Hao's business card, so these rules are enforced, not just reviewed.
@@ -30,6 +31,13 @@ describe("shipped content", () => {
 
   it.each(files)("%s has no unfinished markers", (file) => {
     expect(fs.readFileSync(file, "utf8")).not.toMatch(/\bTODO\b|\[BUILDER|lorem ipsum/i);
+  });
+
+  // The name list is private (gitignored), so on a fresh clone this check has nothing to compare
+  const clientNames = loadForbiddenTerms();
+
+  it.skipIf(clientNames.length === 0).each(files)("%s names no client", (file) => {
+    expect(findForbiddenTerms(fs.readFileSync(file, "utf8"), clientNames)).toEqual([]);
   });
 
   it.each(files)("%s contains no phone number", (file) => {
