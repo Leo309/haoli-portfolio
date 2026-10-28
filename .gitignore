@@ -40,3 +40,6 @@ next-env.d.ts
 
 # claude code
 .claude/
+
+# private planning docs (kept out of this public repo)
+private/
