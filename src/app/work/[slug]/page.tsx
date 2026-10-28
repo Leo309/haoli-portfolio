@@ -22,7 +22,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${study.title} — Hao Li`,
     description: study.summary,
-    openGraph: { title: study.title, description: study.summary, url: `/work/${slug}` },
+    // A page-level openGraph replaces the root one, so the preview image must be named again
+    openGraph: { title: study.title, description: study.summary, url: `/work/${slug}`, images: ["/opengraph-image"] },
+    twitter: { card: "summary_large_image" },
   };
 }
 

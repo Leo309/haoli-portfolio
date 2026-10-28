@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     url: "https://haoli.ai",
     type: "website",
   },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
