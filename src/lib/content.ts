@@ -71,13 +71,16 @@ export function getNextCase(slug: string, root?: string): CaseStudy {
 }
 
 export function getLabPosts(root: string = process.cwd()): LabPost[] {
-  return readFolder(path.join(root, "content", "lab"), LAB_FIELDS).map(({ slug, data, body }) => ({
-    slug,
-    title: String(data.title),
-    date: String(data.date),
-    summary: String(data.summary),
-    body,
-  }));
+  return readFolder(path.join(root, "content", "lab"), LAB_FIELDS)
+    .map(({ slug, data, body }) => ({
+      slug,
+      title: String(data.title),
+      date: String(data.date),
+      summary: String(data.summary),
+      body,
+    }))
+    // YYYY-MM strings sort correctly as text; newest first
+    .sort((a, b) => b.date.localeCompare(a.date));
 }
 
 export function getLabPost(slug: string, root?: string): LabPost | null {

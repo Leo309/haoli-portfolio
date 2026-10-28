@@ -2,7 +2,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { getCase, getCases, getNextCase } from "./content";
+import { getCase, getCases, getLabPost, getLabPosts, getNextCase } from "./content";
 
 function caseFile(slug: string, order: number, extra: Record<string, string> = {}) {
   const fields: Record<string, string> = {
@@ -58,5 +58,22 @@ describe("case studies", () => {
   it("names the file and the field when front matter is incomplete", () => {
     const badRoot = makeRoot({ "content/work/a.md": caseFile("a", 1, { metric: "" }) });
     expect(() => getCases(badRoot)).toThrow(/a\.md.*metric/);
+  });
+});
+
+describe("lab posts", () => {
+  const labFile = (date: string) => `---\ntitle: "Post ${date}"\ndate: "${date}"\nsummary: "S"\n---\n\nBody.\n`;
+  const root = makeRoot({
+    // Alphabetical file order (alpha, beta) is the opposite of date order on purpose
+    "content/lab/alpha.md": labFile("2026-03"),
+    "content/lab/beta.md": labFile("2026-10"),
+  });
+
+  it("lists posts newest first", () => {
+    expect(getLabPosts(root).map((p) => p.slug)).toEqual(["beta", "alpha"]);
+  });
+
+  it("returns null for an unknown slug", () => {
+    expect(getLabPost("missing", root)).toBeNull();
   });
 });
