@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import type { ChatTurn } from "@/lib/ask-history";
+import { trackEvent } from "@/lib/analytics";
 import { usePanel } from "./PanelProvider";
 
 type Message = { role: "user" | "assistant"; content: string; sources?: string[] };
@@ -42,6 +43,7 @@ export default function AskPanel() {
     const q = question.trim();
     if (!q || loading) return;
 
+    trackEvent("ask_question");
     setMessages((m) => [...m, { role: "user", content: q }]);
     setInput("");
     setError("");
@@ -149,7 +151,10 @@ export default function AskPanel() {
 
       <button
         type="button"
-        onClick={() => openPanel("inquiry")}
+        onClick={() => {
+          trackEvent("work_with_me_click", { from: "ask" });
+          openPanel("inquiry");
+        }}
         className="mt-3 -mb-2 self-start py-2 text-[13px] font-semibold text-accent hover:text-accent-ink"
       >
         Work with me →

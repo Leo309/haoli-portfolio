@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { validateInquiry, type InquiryField } from "@/lib/inquiry";
+import { trackEvent } from "@/lib/analytics";
 import { links } from "@/lib/site";
 import { usePanel } from "./PanelProvider";
 
@@ -54,6 +55,7 @@ export default function InquiryForm() {
       const data = await res.json().catch(() => ({}));
 
       if (res.ok) {
+        trackEvent("inquiry_submit");
         form.reset();
         setStatus("sent");
       } else if (res.status === 400 && data.errors) {

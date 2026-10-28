@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useCallback, useContext, useMemo, useState } from "react";
+import { trackEvent, type EventName } from "@/lib/analytics";
 
 export type PanelId = "ask" | "inquiry";
 
@@ -28,18 +29,30 @@ export function usePanel(): PanelContextValue {
   return context;
 }
 
+// Each panel's opener is its conversion event, so buttons don't need to repeat it
+const OPEN_EVENT: Record<PanelId, EventName> = { inquiry: "work_with_me_click", ask: "ask_open" };
+
 export function OpenPanelButton({
   panel,
   className,
+  event = OPEN_EVENT[panel],
   children,
 }: {
   panel: PanelId;
   className?: string;
+  event?: EventName;
   children: React.ReactNode;
 }) {
   const { openPanel } = usePanel();
   return (
-    <button type="button" className={className} onClick={() => openPanel(panel)}>
+    <button
+      type="button"
+      className={className}
+      onClick={() => {
+        trackEvent(event);
+        openPanel(panel);
+      }}
+    >
       {children}
     </button>
   );

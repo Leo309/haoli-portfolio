@@ -7,7 +7,7 @@ export default function Experience() {
       <SectionHeader
         id="experience"
         title="Experience"
-        link={{ href: links.resume, label: "Full resume ↗", external: true }}
+        link={{ href: links.resume, label: "Full resume ↗", external: true, event: "resume_click" }}
       />
       <ul>
         {experience.map((e) => (

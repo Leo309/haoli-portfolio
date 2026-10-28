@@ -1,10 +1,12 @@
 import Link from "next/link";
+import type { EventName } from "@/lib/analytics";
+import TrackedLink from "@/components/TrackedLink";
 
 interface SectionHeaderProps {
   title: string;
   id: string;
   count?: number;
-  link?: { href: string; label: string; external?: boolean };
+  link?: { href: string; label: string; external?: boolean; event?: EventName };
 }
 
 // Small uppercase label + two-digit count + thin rule + optional link, shared by every section
@@ -22,7 +24,11 @@ export default function SectionHeader({ title, id, count, link }: SectionHeaderP
       )}
       <span aria-hidden className="h-px flex-1 bg-line" />
       {link &&
-        (link.external ? (
+        (link.event ? (
+          <TrackedLink href={link.href} event={link.event} className={linkClass}>
+            {link.label}
+          </TrackedLink>
+        ) : link.external ? (
           <a href={link.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
             {link.label}
           </a>

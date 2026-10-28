@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { OpenPanelButton } from "./PanelProvider";
+import TrackedLink from "./TrackedLink";
 import { links, profile } from "@/lib/site";
 import { GitHubIcon, LinkedInIcon, MailIcon } from "./Icons";
 
@@ -45,14 +46,13 @@ export default function Sidebar() {
         >
           Work with me <span aria-hidden className="transition-transform group-hover:translate-x-[3px]">→</span>
         </OpenPanelButton>
-        <a
+        <TrackedLink
           href={links.resume}
-          target="_blank"
-          rel="noopener noreferrer"
+          event="resume_click"
           className="inline-flex min-h-10 items-center rounded-[10px] border border-line-2 bg-card px-4 text-[13.5px] font-semibold transition-colors hover:border-ink-2"
         >
           Resume
-        </a>
+        </TrackedLink>
       </div>
 
       <OpenPanelButton
