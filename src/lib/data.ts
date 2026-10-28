@@ -4,7 +4,6 @@ export const personalInfo = {
   tagline:
     "I build AI agents and automations that turn messy business data into results.",
   email: "haoli.van@outlook.com",
-  phone: "778-922-8089",
   github: "https://github.com/Leo309",
   linkedin: "https://www.linkedin.com/in/haoli-van/",
   portfolio: "https://haoli.ai",

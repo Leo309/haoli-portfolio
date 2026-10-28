@@ -1,89 +1,56 @@
-# Work Experience
+# Experience
 
-## Vancity Community Foundation — Data Analysis and Research Officer, Reaching Home (June 2026 – Present)
+## Vancity Community Foundation: Data Analysis and Research Officer, Reaching Home (June 2026 – present)
 
-Hao works full-time as Data Analysis and Research Officer for the Reaching Home program at Vancity Community Foundation in Vancouver, BC. Reaching Home is Canada's community-based homelessness strategy, a federal program that funds communities to prevent and reduce homelessness. Hao provides data analysis and research for the program.
+Hao works full-time as Data Analysis and Research Officer for the Reaching Home program at Vancity Community Foundation in Vancouver, BC. Reaching Home is Canada's community-based homelessness strategy, a federal program that funds communities to prevent and reduce homelessness.
 
-## Skynex Digital — Founder (February 2025 – Present)
+## Skynex Digital: Founder (February 2025 – present)
 
-Hao founded and runs Skynex Digital (skynexdigital.com), his one-person company focused on AI products, data consulting, and growth marketing. He runs it alongside his full-time role. Products include GeoGrade (geograde.ai) and Real Return Analyzer (realreturns.skynexdigital.com), plus CollabZen (collabzen.ai), a partner CRM that is currently paused.
+Hao founded Skynex Digital (skynexdigital.com), his one-person company, and runs it alongside his full-time role. It builds AI products and delivers AI, automation, data and growth work for clients. Its products include GeoGrade, Real Return Analyzer and CollabZen. See the Products document for details.
 
-### Consulting & Manufacturing Analytics
+### Client work: data platform strategy for a knitwear manufacturer with over $100M in revenue (ongoing)
 
-Hao is leading data platform strategy for a textile manufacturer with over $100M in revenue. He conducted stakeholder interviews across 5+ departments to define requirements for centralized analytics. This enabled management to access cross-departmental insights for the first time and eliminated manual data reconciliation across departments.
+- **Discovery**: Hao interviewed stakeholders across more than 5 departments to define requirements for centralized analytics. This gave management cross-departmental insight for the first time and removed manual data reconciliation between departments.
+- **Data readiness**: he assessed the source systems and found documentation and governance gaps that would otherwise have caused downstream reporting failures.
+- **Roadmap**: he evaluated solution providers and designed a technical roadmap with department heads and vendors. Leadership adopted it.
 
-### Vendor Evaluation & Technical Roadmap
+### Client work: outbound growth automation for DTC brands
 
-Hao is evaluating solution providers and designing technical roadmaps. He collaborates with department heads and vendors to align on architecture decisions. He delivered a documented roadmap that was adopted by leadership.
+Hao designed targeted cold-email sequences with automated follow-up workflows for DTC brand clients. They reached an 80% open rate and a 25% reply rate, which generated high-intent leads and grew the client pipeline.
 
-### Data Readiness Assessment
+### Client work: custom CRM replacing spreadsheets (0 → 1), which became CollabZen
 
-Hao is conducting data readiness assessments, identifying documentation and governance gaps across source systems. He identified critical gaps that would have caused downstream reporting failures.
+DTC brand owners were tracking influencer partnerships in Excel. Hao built a full-stack CRM (Next.js + PostgreSQL) to replace it. It later became the CollabZen product, which is now paused:
 
-### Growth Marketing
+- It manages metadata for influencers with more than 10M total followers.
+- It saves each client more than 10 hours a month of manual work.
+- Excel import/export and bulk operations made onboarding fast.
 
-Hao designed targeted cold email sequences and automated follow-up workflows for DTC brand clients. Results: 80% open rate, 25% reply rate. This generated high-intent leads and expanded the client pipeline.
+### Automation: AI ad-creative pipeline
 
-### CRM Product (0→1 Build)
+Hao built n8n pipelines that call TikTok APIs to capture trending content, design storyboards and generate ad videos. This let clients scale ad creative production at a controlled cost.
 
-Hao identified DTC brand owner pain points and launched a full-stack CRM product (Next.js + PostgreSQL) to replace Excel-based influencer tracking. The CRM manages metadata for influencers with 10M+ total followers and saves 10+ hours per month in manual operations per client.
+### Analytics: content performance
 
-### CRM Workflow
+Hao analyzed TikTok and Shopify performance data to find the content formats that performed best. This let clients base creative decisions on data and spend their ad budgets more efficiently.
 
-Hao implemented Excel import/export and bulk operations to lower onboarding friction. He enabled status updates, grouping, and structured data capture. This achieved strong SMB DTC adoption and significantly reduced onboarding time.
+### Client builds (delivered)
 
-### Automation
+- **Shopify store for a DTC brand**: a storefront built with a Liquid theme.
 
-Hao built n8n pipelines integrating TikTok APIs to capture trending content, design storyboards, and generate ad videos. This scaled ad creative production at controlled cost while maintaining manual-level quality.
+## University of Victoria: SQL / Data Visualization Developer (January 2024 – December 2024)
 
-### Analytics
+Hao started in a co-op role and was promoted to a full-time contract to lead data initiatives.
 
-Hao analyzed TikTok and Shopify performance data to identify high-performing content formats. This enabled data-driven creative decisions and improved ad spend efficiency.
+- **Tableau to Power BI migration**: he migrated more than 20 Tableau dashboards to Power BI when the Tableau license ended, rebuilding the SQL logic in Microsoft Fabric. This removed Tableau licensing costs.
+- **Database refactor**: as primary implementer, he redesigned the schema and moved the data layer into Microsoft Fabric. Queries ran 40% faster, timeouts stopped and daily refreshes became reliable.
+- **KPI dashboards**: he built department-wide KPI dashboards used by about 200 staff. Together with training and SOPs, they cut ad-hoc data requests by 80%.
+- **Fundraising dashboards**: he built dashboards on curated Raiser's Edge data that track over $100M in donations, with full visibility into major-donor activity.
+- **Automation**: he set up Power Automate flows that refresh Power BI datasets as soon as a pipeline finishes, with no missed refreshes.
+- **Governance**: he configured row-level security through Azure AD / Entra ID groups so each team sees only its own data.
+- **Delivery**: he gathered requirements as user stories with acceptance criteria and agreed metric definitions up front, so there were no post-delivery metric disputes.
+- **Backend**: he maintained and extended FastAPI services in the department's data infrastructure.
 
-## University of Victoria — SQL / Data Visualization Developer (January 2024 – December 2024)
+## University of Victoria: Teaching Assistant (May 2023 – August 2023)
 
-Hao was promoted from Co-op to full-time contract to lead critical data initiatives at the University of Victoria.
-
-### Platform Migration (Tableau to Power BI)
-
-Hao migrated 20+ Tableau dashboards to Power BI due to license sunset. He rebuilt SQL logic and moved reporting into the Microsoft Fabric/Power BI ecosystem. This eliminated costly Tableau licensing fees and standardized the department onto the Fabric ecosystem.
-
-### Database Refactor
-
-Hao served as primary implementer of a full database refactor. He redesigned the schema and migrated the entire data layer into the Microsoft Fabric ecosystem. Result: 40% improvement in query execution time, eliminated timeouts, and enabled reliable daily data refreshes at scale.
-
-### Department-Wide KPI Dashboards
-
-Hao delivered department-wide KPI dashboards tracking team and individual performance metrics. These dashboards are utilized by approximately 200 staff and reduced ad-hoc data requests by 80%.
-
-### Fundraising Dashboards
-
-Hao built fundraising dashboards tracking donations, campaign performance, and donor distribution using curated Raiser's Edge datasets. These dashboards track over $100M in donation volume with 100% visibility into major donor activities.
-
-### Data Curation
-
-Hao transformed raw Raiser's Edge CRM extracts into curated reporting datasets by cleaning and modeling data in SQL Server (reporting tables/views). This enabled reliable, governed reporting on donor and campaign data for the first time.
-
-### Power Automate Integration
-
-Hao configured Power Automate event-triggered flows to automatically refresh Power BI datasets upon data pipeline completion. He integrated with SharePoint for document and notification workflows. This eliminated manual refresh steps and ensured dashboards reflected current data with zero missed refresh incidents.
-
-### FastAPI Maintenance
-
-Hao maintained and enhanced existing FastAPI-based backend services as part of the department's data infrastructure. This sustained reliable API performance supporting reporting and data access workflows.
-
-### Security & Governance
-
-Hao configured dashboard access controls and Row-Level Security (RLS) via Azure AD/Entra ID groups. This restricted teams to their own data segments and met institutional data governance requirements.
-
-### Enablement & Training
-
-Hao proactively analyzed Jira tickets during dashboard design. He authored SharePoint SOPs and led hands-on Power BI training for staff. This reduced ad-hoc data requests by 80% and enabled self-serve reporting across approximately 200 staff.
-
-### Requirements & Delivery
-
-Hao conducted requirements gathering using user stories and acceptance criteria. He aligned KPI/metric definitions with stakeholders and business analysts before development. Result: zero post-delivery metric disputes and clean stakeholder sign-off on all dashboards.
-
-## University of Victoria — Teaching Assistant (May 2023 – August 2023)
-
-Hao served as a Teaching Assistant, supporting training, enablement, and knowledge sharing activities.
+Hao supported training, enablement and knowledge-sharing for students.
