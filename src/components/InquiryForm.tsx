@@ -15,6 +15,12 @@ const FIELDS: { name: InquiryField; label: string; type: "text" | "email" | "tex
   { name: "company", label: "Company / website", type: "text", optional: true, autoComplete: "organization" },
 ];
 
+// Puts keyboard and screen-reader users right on the field that needs fixing
+function focusFirstError(form: HTMLFormElement, errors: Partial<Record<InquiryField, string>>) {
+  const first = FIELDS.find((field) => errors[field.name]);
+  if (first) (form.elements.namedItem(first.name) as HTMLElement | null)?.focus();
+}
+
 const INPUT = "mt-1.5 w-full rounded-[10px] border bg-card px-3 py-2.5 text-[14px] text-ink outline-none transition focus:border-accent focus:shadow-[0_0_0_4px_var(--color-accent-soft)]";
 
 export default function InquiryForm() {
@@ -41,6 +47,7 @@ export default function InquiryForm() {
     const check = validateInquiry(values);
     if (!check.ok) {
       setErrors(check.errors);
+      focusFirstError(form, check.errors);
       return;
     }
 
@@ -61,6 +68,7 @@ export default function InquiryForm() {
       } else if (res.status === 400 && data.errors) {
         setErrors(data.errors);
         setStatus("idle");
+        focusFirstError(form, data.errors);
       } else if (res.status === 503) {
         setFallbackEmail(data.fallbackEmail ?? links.email);
         setStatus("unavailable");
@@ -124,18 +132,14 @@ export default function InquiryForm() {
         <input id="inquiry-nickname" name="nickname" tabIndex={-1} autoComplete="off" />
       </div>
 
-      {status === "unavailable" && (
+      {/* Every failure, whatever the cause, ends with a way to reach Hao directly */}
+      {(status === "unavailable" || status === "error") && (
         <p role="alert" className="mb-4 rounded-[10px] border border-line bg-card p-3 text-[13.5px] text-ink-2">
-          The form couldn&apos;t send right now. Please email me at{" "}
+          {status === "error" ? message : "The form couldn't send right now."} Please email me at{" "}
           <a href={`mailto:${fallbackEmail}`} className="font-semibold text-accent underline underline-offset-2">
             {fallbackEmail}
           </a>
           .
-        </p>
-      )}
-      {status === "error" && (
-        <p role="alert" className="mb-4 text-[13.5px] text-danger">
-          {message}
         </p>
       )}
 
