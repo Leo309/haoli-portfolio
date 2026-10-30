@@ -40,15 +40,14 @@ His own site's agent, AskHao, is an example. It started as a RAG system. When th
 
 ## What Hao is open to
 
-- **Client projects through Skynex Digital**: AI agents, workflow automation and data platforms. The best way to start is the "Work with me" form on haoli.ai.
+- **Client projects through Skynex Digital**: AI agents, workflow automation and data platforms. The best way to start is an email to hi@haoli.ai.
 - **Conversations about AI roles**: AI automation and AI engineering roles at companies putting AI into production.
 
 He is authorized to work in Canada and does not require visa sponsorship.
 
 ## How to reach Hao
 
-- For projects: the "Work with me" form on haoli.ai
-- Email: hello@skynexdigital.com
+- Email: hi@haoli.ai (projects, roles and everything else)
 - LinkedIn: linkedin.com/in/haoli-van
 - GitHub: github.com/Leo309
 - Website: haoli.ai

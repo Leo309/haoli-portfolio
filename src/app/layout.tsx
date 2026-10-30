@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { Geist, Geist_Mono } from "next/font/google";
 import AskPanel from "@/components/AskPanel";
-import InquiryForm from "@/components/InquiryForm";
+import ContactPanel from "@/components/ContactPanel";
 import Panel from "@/components/Panel";
 import { PanelProvider } from "@/components/PanelProvider";
 import { profile } from "@/lib/site";
@@ -41,7 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <AskPanel />
           </Panel>
           <Panel id="inquiry" title="Work with me">
-            <InquiryForm />
+            <ContactPanel />
           </Panel>
         </PanelProvider>
         <Analytics />

@@ -89,7 +89,7 @@ describe("POST /api/ask", () => {
     expect(res.status).toBe(200);
     const toolTurn = create.mock.calls[1][0].messages.at(-1);
     const result = JSON.parse(toolTurn.content[0].content);
-    expect(result.email).toBe("hello@skynexdigital.com");
+    expect(result.email).toBe("hi@haoli.ai");
     expect(result).not.toHaveProperty("phone");
     expect(JSON.stringify(result)).not.toMatch(/\d{3}[-.\s]\d{3}[-.\s]\d{4}/);
   });

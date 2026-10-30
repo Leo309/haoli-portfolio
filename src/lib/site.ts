@@ -50,7 +50,8 @@ const LINKEDIN_URL = "https://www.linkedin.com/in/haoli-van/";
 export const links = {
   linkedin: LINKEDIN_URL,
   github: "https://github.com/Leo309",
-  email: "hello@skynexdigital.com",
+  // Forwarded to Hao's inbox by Cloudflare Email Routing
+  email: "hi@haoli.ai",
   skynex: "https://www.skynexdigital.com",
   // No resume PDF yet, so LinkedIn stands in; switch to "/resume.pdf" once it exists
   resume: LINKEDIN_URL,
